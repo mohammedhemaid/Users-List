@@ -13,7 +13,5 @@
     <string name="age">Age</string>
     <string name="gender">Gender</string>
     <string name="country">Country</string>
-    <string name="internal_server_error">Internal Server Error</string>
-    <string name="user_not_authorized">User is not Authorized</string>
     <string name="we_can_t_find_any_users">We can\'t find any users</string>
 </resources>
