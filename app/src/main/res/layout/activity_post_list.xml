@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screenBackground"
+    android:fitsSystemWindows="true"
+    tools:context=".usersList.UsersListActivity"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar"
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_users"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_list"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/no_internet"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/you_are_offline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/you_re_offline"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="@string/retry"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/no_content"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/no_content_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/we_can_t_find_any_users"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/retry_users"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="@string/retry"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
